@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.fetch-form {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.fetch-form select {
+  margin: 0 5px;
+}
+
+.container {
+  display: flex;
+  margin-top: 5px;
+}
+
+.container .image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 2px;
+  width: 80vw;
+}
+
+.container .image-wrapper img {
+  max-width: 80vw;
+}
+
+.container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 2px;
+  height: 100%;
+  width: 20vw;
+  justify-items: center;
+  text-align: center;
+  background-color: #333333;
+  color: antiquewhite;
+  font-size: 24px;
+}
+
+.container ul li {
+  color: antiquewhite;
+  width: 100%;
+}
+
+.container ul li:nth-child(2n-1) {
+  background-color: darkgray;
+}
