@@ -7,35 +7,28 @@ const randomFoxUrl = "https://randomfox.ca/floof/"
 const dropDown = document.querySelector('.dropdown');
 const fetchForm = document.querySelector('.fetch-form');
 const favoriteList = document.querySelector('.favorite');
-const fetchDelay = 600;
 let imageObject = {};
 let favoriteImages = [];
 let counter = 0;
 
 // function for checking the type of animal submitted
 const checkAnimal = (animal) => {
-    if(animal === "Cat") {
-        getNewImage(randomCatUrl);
-        setTimeout(() => displayImage(imageObject.file), fetchDelay);
-    };
-    if(animal === "Dog") {
-        getNewImage(randomDogUrl);
-        setTimeout(() => displayImage(imageObject.url), fetchDelay);
-    };
-    if(animal === "Fox") {
-        getNewImage(randomFoxUrl);
-        setTimeout(() => displayImage(imageObject.image), fetchDelay);    
-    };
+    if(animal === "Cat") {getNewImage(randomCatUrl, animal)};
+    if(animal === "Dog") {getNewImage(randomDogUrl, animal)};
+    if(animal === "Fox") {getNewImage(randomFoxUrl, animal)};
 }
 
 // function for fetching a new image
-const getNewImage = (url) => {
+const getNewImage = (url, animal) => {
     fetch(url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
             imageObject = data;
+            if(animal === "Cat") {displayImage(imageObject.file)};
+            if(animal === "Dog") {displayImage(imageObject.url)};
+            if(animal === "Fox") {displayImage(imageObject.image)};
         });
 } 
 
